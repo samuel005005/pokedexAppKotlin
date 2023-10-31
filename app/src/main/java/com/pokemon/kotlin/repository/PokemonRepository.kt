@@ -20,9 +20,9 @@ class PokemonRepository @Inject constructor(
         return Resource.Success(response)
     }
 
-    suspend fun getPokemonInto(name: String): Resource<Pokemon> {
+    suspend fun getPokemonInto(pokemonName: String): Resource<Pokemon> {
         val response = try {
-            api.getPokemonInfo(name);
+            api.getPokemonInfo(pokemonName);
         } catch (e: Exception) {
             return Resource.Error("An unknown error occurred.")
         }
